@@ -4,37 +4,36 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+import ima1 from '~assets/img/home/1.jpg'
+import ima2 from '~assets/img/home/2.jpg'
+import ima3 from '~assets/img/home/3.jpg'
+
 import * as Style from './style'
 
 export const News = () => {
 
   const settings = {
-    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1
   }
+
+  const banners = [
+    ima1,
+    ima2,
+    ima3
+  ]
+
   return (
     <Style.News>
       <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+        {
+          banners.map((items:string, index:number)=>(
+            <Style.Items key={index}>
+              <img src={items} alt={`banner ${index + 1}`}/>
+            </Style.Items>
+          ))
+        }
       </Slider>
     </Style.News>
   )

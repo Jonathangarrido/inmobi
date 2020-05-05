@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const News = styled.section`
   position: relative;
   .slick-track{
-    padding: 0 20px;
     .slick-slide{
     }
 
@@ -18,3 +17,13 @@ export const News = styled.section`
     left: 0;
   }
 `
+
+export const Items = styled.div`
+  position: relative;
+  img{
+    height: 400px;
+    object-fit: cover;
+    width: 100vw;
+  }
+`
+
